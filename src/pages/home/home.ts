@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController, ActionSheetController } from 'ionic-angular';
-import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @Component({
   selector: 'page-home',
@@ -8,11 +8,15 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 })
 export class HomePage {
 
-    songs: AngularFireList<any>;
+    // songs: AngularFireList<any>;
+    songs;
+
     
     constructor(public navCtrl: NavController, public alertCtrl: AlertController,
         public afDatabase: AngularFireDatabase, public actionSheetCtrl: ActionSheetController) {
+        // this.songs = afDatabase.list('/songs/').valueChanges();
         this.songs = afDatabase.list('/songs/').valueChanges();
+
     }
     
     addSong() {
