@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController, ActionSheetController } from 'ionic-angular';
+import { NavController, AlertController, ActionSheetController, IonicPage } from 'ionic-angular';
 import { AngularFireDatabase } from 'angularfire2/database';
 
+@IonicPage()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
